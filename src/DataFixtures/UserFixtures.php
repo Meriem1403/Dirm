@@ -111,7 +111,7 @@ class UserFixtures extends Fixture implements DependentFixtureInterface
             $user->setLieu($lieux[array_rand($lieux)]);
             $user->setCategorie($categories[array_rand($categories)]);
 
-            $hashedPassword = $this->hasher->hashPassword($user, 'admin123');
+            $hashedPassword = $this->hasher->hashPassword($user, 'change-me');
             $user->setPassword($hashedPassword);
 
             if ($data['email'] === 'admin.dirm@example.com') {

@@ -43,7 +43,7 @@ class LoginFormTest extends WebTestCase
 
         $form = $crawler->selectButton('Connexion')->form([
             'email' => 'admin.dirm@example.com',     // ✅ corrigé ici
-            'password' => 'admin123',                // ✅ corrigé ici
+            'password' => 'change-me',                // ✅ corrigé ici
         ]);
 
         $client->submit($form);

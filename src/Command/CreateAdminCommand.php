@@ -52,13 +52,13 @@ class CreateAdminCommand extends Command
         $user->setDomaine($this->domaineRepo->findAll()[0]);
         $user->setLieu($this->lieuRepo->findAll()[0]);
 
-        $password = $this->hasher->hashPassword($user, 'admin123');
+        $password = $this->hasher->hashPassword($user, 'change-me');
         $user->setPassword($password);
 
         $this->em->persist($user);
         $this->em->flush();
 
-        $output->writeln('✅ Admin créé avec email: admin@admin.fr / mdp: admin123');
+        $output->writeln('✅ Admin créé avec email: admin@admin.fr / mdp: change-me');
 
         return Command::SUCCESS;
     }
